@@ -1,6 +1,11 @@
 # ignore
 .settings/*
 .idea/*
+*/out/*
+*/build/*
+.gradle/*
+build/*
+buildSrc/*
 
 # Compiled class file
 *.class
