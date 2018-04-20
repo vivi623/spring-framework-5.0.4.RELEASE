@@ -136,6 +136,7 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 			String[] configLocations, boolean refresh, @Nullable ApplicationContext parent)
 			throws BeansException {
 
+		//创建了解析器 @see AbstractApplicationContext#PathMatchingResourcePatternResolver
 		super(parent);
 		setConfigLocations(configLocations);
 		if (refresh) {

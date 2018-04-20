@@ -121,6 +121,8 @@ public interface BeanFactory {
 	 * {@code myJndiObject} is a FactoryBean, getting {@code &myJndiObject}
 	 * will return the factory, not the instance returned by the factory.
 	 */
+	//对FactoryBean 的转义定义，因为如果使用bean 的名字检索FactoryBean 得到的对象是工厂生成的对象，
+	//如果需要得到工厂本身，需要转义
 	String FACTORY_BEAN_PREFIX = "&";
 
 
@@ -137,6 +139,7 @@ public interface BeanFactory {
 	 * with the specified name
 	 * @throws BeansException if the bean could not be obtained
 	 */
+	//根据bean 的名字，获取在IOC 容器中得到bean 实例
 	Object getBean(String name) throws BeansException;
 
 	/**
@@ -157,6 +160,7 @@ public interface BeanFactory {
 	 * @throws BeanNotOfRequiredTypeException if the bean is not of the required type
 	 * @throws BeansException if the bean could not be created
 	 */
+	//根据bean 的名字和Class 类型来得到bean 实例，增加了类型安全验证机制。
 	<T> T getBean(String name, @Nullable Class<T> requiredType) throws BeansException;
 
 	/**
